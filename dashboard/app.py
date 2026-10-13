@@ -37,7 +37,7 @@ logout_page = st.Page(
     icon="🚪",
 )
 
-# Show protected pages only after authentication
+# Show only the sign-in page before authentication
 if authenticated:
     navigation = st.navigation(
         [home_page, dashboard_page, logout_page],

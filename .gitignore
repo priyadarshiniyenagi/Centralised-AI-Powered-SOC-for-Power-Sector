@@ -32,3 +32,8 @@ node_modules/
 
 # Generated SOC results
 results/
+# Local application backups
+dashboard/app_backup.py
+dashboard/*_backup.py
+# Cloud testing environment
+.venv-cloud/
