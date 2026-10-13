@@ -7,8 +7,8 @@ __pycache__/
 node_modules/
 .kilo/
 
-# Local database
-database/soc.db
+# Local databases
+database/*.db
 
 # Raw and generated datasets
 data/raw/
