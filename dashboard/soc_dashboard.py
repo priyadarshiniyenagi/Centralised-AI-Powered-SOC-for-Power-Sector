@@ -2,7 +2,7 @@ import streamlit as st
 import sqlite3
 import pandas as pd
 from pathlib import Path
-
+import os
 
 # ============================================================
 # PAGE CONFIGURATION
@@ -19,13 +19,17 @@ st.set_page_config(
 # DATABASE PATH
 # ============================================================
 
+
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
-DATABASE_FILE = (
-    PROJECT_ROOT
-    / "database"
-    / "soc.db"
+DATABASE_FILE = Path(
+    os.environ.get(
+        "SOC_DATABASE_PATH",
+        str(PROJECT_ROOT / "database" / "soc.db"),
+    )
 )
+
 
 
 # ============================================================
