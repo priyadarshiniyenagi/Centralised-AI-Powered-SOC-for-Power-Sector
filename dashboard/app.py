@@ -31,6 +31,13 @@ dashboard_page = st.Page(
     icon="📊",
 )
 
+
+assistant_page = st.Page(
+    "pages/ai_assistant.py",
+    title="AI Security Assistant",
+    icon="🤖",
+)
+
 logout_page = st.Page(
     "pages/logout.py",
     title="Sign Out",
@@ -38,11 +45,18 @@ logout_page = st.Page(
 )
 
 # Show only the sign-in page before authentication
+
 if authenticated:
     navigation = st.navigation(
-        [home_page, dashboard_page, logout_page],
+        [
+            home_page,
+            dashboard_page,
+            assistant_page,
+            logout_page,
+        ],
         position="sidebar",
     )
+
 else:
     navigation = st.navigation(
         [login_page],
